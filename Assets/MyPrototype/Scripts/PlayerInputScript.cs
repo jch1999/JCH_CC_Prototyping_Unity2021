@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 #endif
 namespace MyPrototype
 {
-    public class PlayerInput : MonoBehaviour
+    public class PlayerInputScript : MonoBehaviour
     {
         [Header("CharacterInput Values")]
         [Tooltip("Character Move Input")]
@@ -17,6 +17,18 @@ namespace MyPrototype
         public bool jump;
         [Tooltip("Character Sprint Input")]
         public bool sprint;
+
+        //analogMovement? 어디에 쓰이는 거람?
+        [Header("Movement Setting")]
+        public bool analogMovement;
+
+        //PC로만 할 예정이니까 ios랑 android는 제거...
+        //아 몰라 그냥 추가해!
+#if !UNITY_IOS&&!UNITY_ANDROID
+        [Header("Mouse Cursor Setting")]
+        public bool cursorLocked=true;
+        public bool cursurInputForLock=true;
+#endif
 
         public void OnMove(InputValue value)
         {
@@ -74,5 +86,17 @@ namespace MyPrototype
             sprint = newSprintState;
             Debug.Log("SprintInput: "+newSprintState.ToString());
         }
+
+#if !UNITY_IOS&&!UNITY_ANDROID
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            SetCursorState(cursorLocked);
+        }
+
+        private void SetCursorState(bool newState)
+        {
+            Cursor.lockState=newState ? CursorLockMode.Locked : CursorLockMode.None;
+        }
+#endif
     }
 }
