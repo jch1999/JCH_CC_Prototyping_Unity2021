@@ -39,4 +39,8 @@ public class MYOnTriggerEvent : MonoBehaviour
     {
         
     }
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x,transform.position.y-1f,transform.position.z),2.5f);
+    }
 }
