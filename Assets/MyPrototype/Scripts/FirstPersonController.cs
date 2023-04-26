@@ -19,7 +19,7 @@ namespace MyPrototype
         [Tooltip("Sprint speed of the character")]
         public float SprintSpeed=6.0f;
         [Tooltip("Rotation speed of the character")]
-        public float RotationSpeed=6.0f;
+        public float RotationSpeed=1.0f;
         [Tooltip("Acceleration or deacceleration")]
         public float SpeedChangeRate=10.0f;
 
@@ -61,7 +61,7 @@ namespace MyPrototype
         private float _speed;
         private float _rotationVelocity;
         private float _verticalVelocity;
-        private float _terminalVelocity;
+        private float _terminalVelocity=53.0f;
 
         //timeout deltaTime
         private float _jumpTimeOutDelta;
@@ -112,8 +112,12 @@ namespace MyPrototype
 
         private void CameraRotation()
         {
+            //if rotaion is disabled
+            if(!_input.rotatable)
+                return;
+
             // if there is an input
-            if(_input.look.sqrMagnitude>=_threshold&&_input.rotatable)
+            if(_input.look.sqrMagnitude>=_threshold)
             {
                 _chinemachineTargetPitch+=_input.look.y*RotationSpeed*Time.deltaTime;
                 _rotationVelocity=_input.look.x*RotationSpeed*Time.deltaTime;
@@ -146,12 +150,12 @@ namespace MyPrototype
             float inputMagnitude=_input.analogMovement?_input.move.magnitude:1.0f;
 
             // accelerate or deaccelerate to target speed
-            if(CurrentHorizontalSpeed<targetSpeed-speedOffset||targetSpeed+speedOffset>CurrentHorizontalSpeed)
+            if(CurrentHorizontalSpeed<targetSpeed-speedOffset||CurrentHorizontalSpeed>targetSpeed+speedOffset)
             {
                 // creates curved result rather than a linear one giving a more organic speed change
                 // 유기적인 선형 속도변환를 제공하는 대신 곡선형 속도 변화 결과를 만들어 낸다
 				// note T in Lerp is clamped, so we don't need to clamp our speed
-                // Lerp에 T는 고정되어 있기 때문에 속도를 고정할 필요 x
+                // Lerp에 T는 고정되어 있기 때문에 속도를 고정할 필요 x ?
                 _speed=Mathf.Lerp(CurrentHorizontalSpeed,targetSpeed*inputMagnitude,Time.deltaTime*SpeedChangeRate);
 
                 //소수점 3자리 수까지만 남기기.
@@ -171,7 +175,7 @@ namespace MyPrototype
                 inputDirection=transform.right*_input.move.x+transform.forward*_input.move.y;
             }
 
-            // move the player
+            // move the player -x, z 축 이동량 + y 축 이동량
             _controller.Move(inputDirection.normalized*(_speed*Time.deltaTime)+new Vector3(0.0f,_verticalVelocity,0.0f)*Time.deltaTime);
         }
 
