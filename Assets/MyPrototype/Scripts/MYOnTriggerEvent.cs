@@ -5,7 +5,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class MYOnTriggerEvent : MonoBehaviour
 {
-    public LayerMask targetLayer;
     //for my prototype,there need to be emission  or emission outline effects for item when player enter the item's detection bound.
     [Header("Trigger Enter Event Section")]
     public UnityEvent onTriggerEnterEvent;
@@ -15,6 +14,9 @@ public class MYOnTriggerEvent : MonoBehaviour
     [Header("Trigger Exit Event Section")]
     public UnityEvent onTriggerExitEvent;
     
+    [Space(10)]
+    public bool m_EnterHasBeenTriggered;
+    public bool m_ExitHasBeenTriggered;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +25,16 @@ public class MYOnTriggerEvent : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer!=targetLayer)
-            return;
+        onTriggerEnterEvent.Invoke();
+        m_EnterHasBeenTriggered=true;
+        m_ExitHasBeenTriggered=false;
     }
     
     void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.layer!=targetLayer)
-            return;
-        
+        onTriggerExitEvent.Invoke();
+        m_ExitHasBeenTriggered=true;
+        m_EnterHasBeenTriggered=false;
     }
     
     // Update is called once per frame

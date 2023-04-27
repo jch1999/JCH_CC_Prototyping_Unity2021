@@ -56,6 +56,7 @@ namespace MyPrototype
 
         //cinemachine
         private float _chinemachineTargetPitch;
+        private float _chinemachineTargetYaw;
 
         //player
         private float _speed;
@@ -119,13 +120,21 @@ namespace MyPrototype
             // if there is an input
             if(_input.look.sqrMagnitude>=_threshold)
             {
+                //좌우 회전 제한을 추가하려고 했는데 직접 해보니 영..
+                //제자리에서 한 바퀴를 못 도니 많이 불편하네
+                //카메라랑 케릭터랑 좀 떨어져 있어서 벽 뚫는게 불편한데 어쩔 수 없나?
                 _chinemachineTargetPitch+=_input.look.y*RotationSpeed*Time.deltaTime;
                 _rotationVelocity=_input.look.x*RotationSpeed*Time.deltaTime;
+                //_chinemachineTargetYaw+=_input.look.x*RotationSpeed*Time.deltaTime;
 
-                // calmp out pitch rotation
+                // clamp out pitch rotation
                 _chinemachineTargetPitch=ClampAngle(_chinemachineTargetPitch,BottomClamp,TopClamp);
 
+                //clamp out yaw rotation
+                //_chinemachineTargetYaw=ClampAngle(_chinemachineTargetYaw,BottomClamp/2,TopClamp/2);
+
                 //Update Cinemachine camera target pitch
+                //CinemachineCameraTarget.transform.localRotation=Quaternion.Euler(_chinemachineTargetPitch,_chinemachineTargetYaw,0.0f);
                 CinemachineCameraTarget.transform.localRotation=Quaternion.Euler(_chinemachineTargetPitch,0.0f,0.0f);
 
                 //rotate the player left and right

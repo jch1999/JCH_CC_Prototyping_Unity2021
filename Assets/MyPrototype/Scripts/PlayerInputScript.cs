@@ -61,13 +61,13 @@ namespace MyPrototype
         public void MoveInput(Vector2 newMoveDirection)
         {
             move = newMoveDirection;
-            Debug.Log("MoveInput: "+newMoveDirection.ToString());
+            //Debug.Log("MoveInput: "+newMoveDirection.ToString());
         } 
 
         public void LookInput(Vector2 newLookDirection)
         {
             look = newLookDirection;
-            Debug.Log("LookInput: "+newLookDirection.ToString());
+            //Debug.Log("LookInput: "+newLookDirection.ToString());
         }
 
         public void LookLockInput()
@@ -78,13 +78,13 @@ namespace MyPrototype
         public void JumpInput(bool newJumpState)
         {
             jump = newJumpState;
-            Debug.Log("JumpInput: "+newJumpState.ToString());
+            //Debug.Log("JumpInput: "+newJumpState.ToString());
         }
 
         public void SprintInput(bool newSprintState)
         {
             sprint = newSprintState;
-            Debug.Log("SprintInput: "+newSprintState.ToString());
+            //Debug.Log("SprintInput: "+newSprintState.ToString());
         }
 
 #if !UNITY_IOS&&!UNITY_ANDROID
