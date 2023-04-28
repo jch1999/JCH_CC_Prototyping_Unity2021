@@ -17,12 +17,6 @@ public class MYOnTriggerEvent : MonoBehaviour
     [Space(10)]
     public bool m_EnterHasBeenTriggered;
     public bool m_ExitHasBeenTriggered;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         onTriggerEnterEvent.Invoke();
@@ -37,11 +31,6 @@ public class MYOnTriggerEvent : MonoBehaviour
         m_EnterHasBeenTriggered=false;
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(new Vector3(transform.position.x,transform.position.y-1f,transform.position.z),2.5f);
