@@ -78,6 +78,7 @@ namespace MyPrototype
         {
             if(_mainCamera==null)
                 _mainCamera=GameObject.FindGameObjectWithTag("MainCamera");
+            Cursor.visible=false;
         }
         // Start is called before the first frame update
         void Start()
@@ -262,6 +263,31 @@ namespace MyPrototype
 
             //when selected, draw a gizmo in the position of, and matching radius of, the grounded color
             Gizmos.DrawSphere(new Vector3(transform.position.x,transform.position.y-GroundedOffset,transform.position.z),GroundedRadius);
+        }
+        
+        // 플레이어 입력 활성, UI 입력 정지, 커서 비활성화(비가시화, 고정)
+        public void EnablePlayerInput()
+        {
+            PlayerInput input=GetComponent<PlayerInput>();
+            input.actions.FindActionMap("Player").Enable();
+            input.actions.FindActionMap("UI").Disable();
+#if UNITY_EDITOR||UNITY_EDITOR_WIN
+            Cursor.visible=false;
+            Mouse.current.WarpCursorPosition(new Vector3(0.0f,0.0f,0.0f));
+            Cursor.lockState=CursorLockMode.Locked;
+#endif
+        }
+        
+        // 플레이어 입력 정지, UI 입력 활성, 커서 활성화(가시화, 이동)
+        public void DisablePlayerInput()
+        {
+            PlayerInput input=GetComponent<PlayerInput>();
+            input.actions.FindActionMap("Player").Disable();
+            input.actions.FindActionMap("UI").Enable();
+#if UNITY_EDITOR||UNITY_EDITOR_WIN
+            Cursor.visible=true;
+            Cursor.lockState=CursorLockMode.Confined;
+#endif
         }
     }
 }

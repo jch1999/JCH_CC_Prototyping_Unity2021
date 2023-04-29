@@ -57,7 +57,7 @@ namespace MyPrototype
         {
             SprintInput(value.isPressed);
         }
-
+        
         public void MoveInput(Vector2 newMoveDirection)
         {
             move = newMoveDirection;
@@ -86,7 +86,7 @@ namespace MyPrototype
             sprint = newSprintState;
             //Debug.Log("SprintInput: "+newSprintState.ToString());
         }
-
+        
 #if !UNITY_IOS&&!UNITY_ANDROID
         private void OnApplicationFocus(bool hasFocus)
         {
