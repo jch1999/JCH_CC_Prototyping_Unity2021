@@ -74,6 +74,11 @@ namespace MyPrototype
 
         private float _threshold=0.01f;
 
+        //player move sound
+        private AudioSource audioSource;
+        public AudioClip walkSound;
+        public AudioClip jumpSound;
+
         void Awake()
         {
             if(_mainCamera==null)
@@ -85,6 +90,10 @@ namespace MyPrototype
         {
             _controller=GetComponent<CharacterController>();
             _input=GetComponent<PlayerInputScript>();
+
+            audioSource=GetComponent<AudioSource>();
+            audioSource.clip=walkSound;
+            audioSource.Play();
 
             _jumpTimeOutDelta= JumpTimeout;
             _fallTimeOutDelta= FallTimeout;
@@ -187,6 +196,17 @@ namespace MyPrototype
 
             // move the player -x, z 축 이동량 + y 축 이동량
             _controller.Move(inputDirection.normalized*(_speed*Time.deltaTime)+new Vector3(0.0f,_verticalVelocity,0.0f)*Time.deltaTime);
+
+            //걷는 소리 재생 속도 조절
+            audioSource.pitch=_input.sprint?SprintSpeed/MoveSpeed:1.0f;
+            if(targetSpeed!=0.0f&&!audioSource.isPlaying)
+            {
+                if(Grounded)
+                {
+                    audioSource.Play();
+                    Debug.Log("Play!");
+                }
+            }
         }
 
         private void JumpAndGravity()
@@ -208,6 +228,9 @@ namespace MyPrototype
                 {
                     //점프 높이*-2f*Gravity의 제곱근 많큼 위로 상승 - Gravitiy의 기본값이 -15f
                     _verticalVelocity=Mathf.Sqrt(JumpHeight*-2f*Gravity);
+                    
+                    //점프 소리 재생
+                    audioSource.PlayOneShot(jumpSound);
                 }
 
                 // jump timeOut

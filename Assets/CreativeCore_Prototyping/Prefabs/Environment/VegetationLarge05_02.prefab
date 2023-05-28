@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5175932414549554565}
   - component: {fileID: 4198393998988097707}
   - component: {fileID: 1529048466477014965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge05_02_LOD02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6069058180098361223}
   m_RootOrder: 2
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -92,7 +94,7 @@ GameObject:
   - component: {fileID: 422825588160121998}
   - component: {fileID: 3694498590073876534}
   - component: {fileID: 1676251015724177962}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge05_02_LOD01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6069058180098361223}
   m_RootOrder: 1
@@ -132,6 +135,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -173,7 +177,7 @@ GameObject:
   - component: {fileID: 2746702089234500798}
   - component: {fileID: 7979621867915637141}
   - component: {fileID: 3859044868538189066}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge05_02_LOD00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,6 +194,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6069058180098361223}
   m_RootOrder: 0
@@ -213,6 +218,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -253,7 +259,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6069058180098361223}
   - component: {fileID: 1325113732124094710}
-  m_Layer: 0
+  - component: {fileID: 7750633708786590683}
+  m_Layer: 7
   m_Name: VegetationLarge05_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,6 +277,7 @@ Transform:
   m_LocalRotation: {x: 0.08948988, y: -0.5874301, z: -0.13716008, w: 0.7925305}
   m_LocalPosition: {x: -10.86, y: 0, z: -8.95}
   m_LocalScale: {x: 0.8075, y: 0.8075, z: 0.8075}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2746702089234500798}
   - {fileID: 422825588160121998}
@@ -304,3 +312,17 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1529048466477014965}
   m_Enabled: 1
+--- !u!136 &7750633708786590683
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877683752399625533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.80594724
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0.0068852887, y: 1.9600155, z: 0.29238245}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5949857019589301896}
   - component: {fileID: 978836487529933318}
   - component: {fileID: 6622431489878950482}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge07_LOD01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3924340913758895987}
   m_RootOrder: 1
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -92,7 +94,7 @@ GameObject:
   - component: {fileID: 5781010774849491000}
   - component: {fileID: 8845985697529724112}
   - component: {fileID: 3580575387801512117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge07_LOD00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3924340913758895987}
   m_RootOrder: 0
@@ -132,6 +135,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -172,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3924340913758895987}
   - component: {fileID: 8082854043563575298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +193,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.54, y: 0.54, z: 0.54}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5781010774849491000}
   - {fileID: 5949857019589301896}
@@ -234,7 +239,7 @@ GameObject:
   - component: {fileID: 1596635383547809355}
   - component: {fileID: 7513219292423208988}
   - component: {fileID: 7846179867195679274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VegetationLarge07_LOD02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,6 +256,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3924340913758895987}
   m_RootOrder: 2
@@ -274,6 +280,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
