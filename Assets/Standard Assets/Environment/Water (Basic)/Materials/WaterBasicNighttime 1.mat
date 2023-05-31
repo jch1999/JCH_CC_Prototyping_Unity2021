@@ -59,13 +59,13 @@ Material:
     - _BumpStrength: 0.1
     - _Highlight: 33.207546
     - _Shininess: 1
-    - _WaveScale: 0.07028302
+    - _WaveScale: 0.02
     - _bScale: 0.062924534
     - _bTwirl: 0.05
     - _distort: 0.1
     m_Colors:
     - BumpParm: {r: 1, g: 1, b: -1, a: -1}
-    - WaveSpeed: {r: 9.6877, g: 4.8189816, b: -7.913228, a: 2.8702974}
+    - WaveSpeed: {r: 100, g: 50, b: -70, a: 30}
     - _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 0.7007858, g: 0.48122376, b: 0.47429618, a: 1}
     - _ColorControlCube_ST: {r: 1, g: 1, b: 0, a: 0}
