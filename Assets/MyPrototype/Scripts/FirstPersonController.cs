@@ -2,6 +2,7 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using TMPro;
 #endif
 
 namespace MyPrototype
@@ -78,6 +79,15 @@ namespace MyPrototype
         private AudioSource audioSource;
         public AudioClip walkSound;
         public AudioClip jumpSound;
+
+        //item count
+        [SerializeField]
+        private int MaxItemCount;
+        [SerializeField]
+        private int NowItemCount;
+
+        public TextMeshProUGUI itemGetCountText;
+        public TextMeshProUGUI explainGetCountText;
 
         void Awake()
         {
@@ -311,6 +321,13 @@ namespace MyPrototype
             Cursor.visible=true;
             Cursor.lockState=CursorLockMode.Confined;
 #endif
+        }
+
+        public void ItemCountTextUpdate()
+        {
+            NowItemCount++;
+            itemGetCountText.text=$"{NowItemCount}/{MaxItemCount}";
+            explainGetCountText.text=$"{NowItemCount}/{MaxItemCount}";
         }
     }
 }
