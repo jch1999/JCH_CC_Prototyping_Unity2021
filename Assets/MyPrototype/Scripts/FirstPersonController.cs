@@ -88,6 +88,7 @@ namespace MyPrototype
 
         public TextMeshProUGUI itemGetCountText;
         public TextMeshProUGUI explainGetCountText;
+        public GameObject ExplainUI;
 
         void Awake()
         {
@@ -115,6 +116,7 @@ namespace MyPrototype
             JumpAndGravity();
             GroundedCheck();
             Move();
+            ExplainCheck();
         }
 
         void LateUpdate()
@@ -122,6 +124,15 @@ namespace MyPrototype
             CameraRotation();
         }
 
+        public void ExplainCheck()
+        {
+            if(_input.isExplain)
+            {
+                DisablePlayerInput();
+                ExplainUI.SetActive(true);
+                _input.isExplain=false;
+            }
+        }
         //땅과의 충돌여부를 확인
         private void GroundedCheck()
         {

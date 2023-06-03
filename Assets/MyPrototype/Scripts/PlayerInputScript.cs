@@ -98,5 +98,16 @@ namespace MyPrototype
             Cursor.lockState=newState ? CursorLockMode.Locked : CursorLockMode.None;
         }
 #endif
+
+        public bool isExplain=false;
+        public void OnExplain()
+        {
+            ExplainActive();
+        }
+
+        public void ExplainActive()
+        {
+            isExplain=true;
+        }
     }
 }

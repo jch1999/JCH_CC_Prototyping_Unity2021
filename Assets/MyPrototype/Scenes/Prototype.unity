@@ -3481,7 +3481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 94c32afdbad90184198f9b88fbc0bdaf, type: 3}
   m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 1651199348}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3517,6 +3517,7 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursurInputForLock: 1
+  isExplain: 0
 --- !u!114 &827212680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3552,6 +3553,7 @@ MonoBehaviour:
   NowItemCount: 0
   itemGetCountText: {fileID: 495144875}
   explainGetCountText: {fileID: 32365176}
+  ExplainUI: {fileID: 1280364893}
 --- !u!114 &827212682
 MonoBehaviour:
   m_ObjectHideFlags: 0
