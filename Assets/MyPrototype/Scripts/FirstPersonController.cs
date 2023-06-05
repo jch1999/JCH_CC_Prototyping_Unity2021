@@ -89,6 +89,7 @@ namespace MyPrototype
         public TextMeshProUGUI itemGetCountText;
         public TextMeshProUGUI explainGetCountText;
         public GameObject ExplainUI;
+        public GameObject CenterPoint;
 
         void Awake()
         {
@@ -315,6 +316,7 @@ namespace MyPrototype
             PlayerInput input=GetComponent<PlayerInput>();
             input.actions.FindActionMap("Player").Enable();
             input.actions.FindActionMap("UI").Disable();
+            CenterPoint.SetActive(true);
 #if UNITY_EDITOR||UNITY_EDITOR_WIN
             Cursor.visible=false;
             Mouse.current.WarpCursorPosition(new Vector3(0.0f,0.0f,0.0f));
@@ -328,6 +330,7 @@ namespace MyPrototype
             PlayerInput input=GetComponent<PlayerInput>();
             input.actions.FindActionMap("Player").Disable();
             input.actions.FindActionMap("UI").Enable();
+            CenterPoint.SetActive(false);
 #if UNITY_EDITOR||UNITY_EDITOR_WIN
             Cursor.visible=true;
             Cursor.lockState=CursorLockMode.Confined;
