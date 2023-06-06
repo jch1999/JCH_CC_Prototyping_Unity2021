@@ -2,7 +2,6 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
-using TMPro;
 #endif
 
 namespace MyPrototype
@@ -74,22 +73,32 @@ namespace MyPrototype
         private GameObject _mainCamera;
 
         private float _threshold=0.01f;
+        
+        [Space(10)]
+        
+        [Tooltip("UI")]
+        [SerializeField]
+        private UIManager _UIManager;
 
+        [Space(10)]
+
+        [Tooltip("Sound")]
         //player move sound
         private AudioSource audioSource;
         public AudioClip walkSound;
         public AudioClip jumpSound;
 
+        [Space(10)]
+
+        [Tooltip("ItemCount")]
         //item count
         [SerializeField]
         private int MaxItemCount;
         [SerializeField]
         private int NowItemCount;
 
-        public TextMeshProUGUI itemGetCountText;
-        public TextMeshProUGUI explainGetCountText;
-        public GameObject ExplainUI;
-        public GameObject CenterPoint;
+        //Game Clear
+        private bool Cleared;
 
         void Awake()
         {
@@ -114,10 +123,15 @@ namespace MyPrototype
         // Update is called once per frame
         void Update()
         {
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
-            ExplainCheck();
+            if(!Cleared)
+            {
+                JumpAndGravity();
+                GroundedCheck();
+                ExplainCheck();
+                ClearCheck();
+                Move();
+            }
+
         }
 
         void LateUpdate()
@@ -130,7 +144,7 @@ namespace MyPrototype
             if(_input.isExplain)
             {
                 DisablePlayerInput();
-                ExplainUI.SetActive(true);
+                _UIManager.UIPanelActive((int)PanelID.ExplainPanel);
                 _input.isExplain=false;
             }
         }
@@ -316,7 +330,6 @@ namespace MyPrototype
             PlayerInput input=GetComponent<PlayerInput>();
             input.actions.FindActionMap("Player").Enable();
             input.actions.FindActionMap("UI").Disable();
-            CenterPoint.SetActive(true);
 #if UNITY_EDITOR||UNITY_EDITOR_WIN
             Cursor.visible=false;
             Mouse.current.WarpCursorPosition(new Vector3(0.0f,0.0f,0.0f));
@@ -330,7 +343,6 @@ namespace MyPrototype
             PlayerInput input=GetComponent<PlayerInput>();
             input.actions.FindActionMap("Player").Disable();
             input.actions.FindActionMap("UI").Enable();
-            CenterPoint.SetActive(false);
 #if UNITY_EDITOR||UNITY_EDITOR_WIN
             Cursor.visible=true;
             Cursor.lockState=CursorLockMode.Confined;
@@ -340,8 +352,19 @@ namespace MyPrototype
         public void ItemCountTextUpdate()
         {
             NowItemCount++;
-            itemGetCountText.text=$"{NowItemCount}/{MaxItemCount}";
-            explainGetCountText.text=$"{NowItemCount}/{MaxItemCount}";
+            _UIManager.UpdateScoreText(NowItemCount,MaxItemCount);
+        }
+
+        public void ClearCheck()
+        {
+            Cleared=NowItemCount==MaxItemCount;
+            if(Cleared)
+            {
+                // ClearPanel.SetActive(true);
+                // GameObject.Find("ItemGetPanel").SetActive(false);
+                DisablePlayerInput();
+                GameObject.Find("MySceneManager").GetComponent<MySceneManager>().LoadScene(2);
+            }
         }
     }
 }

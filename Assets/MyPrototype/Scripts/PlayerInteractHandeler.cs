@@ -41,8 +41,9 @@ public class PlayerInteractHandeler : MonoBehaviour
 
         bool displayInteractable=false;
         //ray를 최대 2.0f만큼 내보내어 충돌된 결과를 hit에 저장해라
+        //길이 수정 2.0f -> 4.0f
         //충돌결과가 존재한다면
-        if(Physics.Raycast(ray,out hit,2.0f))
+        if(Physics.Raycast(ray,out hit,4.0f))
         {
             //배열로 반환하는 구나? 여태까지 List 인줄 알았는데
             OnInteractItem[] interacts=hit.collider.gameObject.GetComponentsInChildren<OnInteractItem>();
