@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 9117889184498291417}
   - component: {fileID: 9117889184498291416}
   - component: {fileID: 9117889184498291399}
+  - component: {fileID: 740090217730180645}
   m_Layer: 0
   m_Name: Item_Floor1
   m_TagString: Untagged
@@ -398,6 +399,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &740090217730180645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117889184498291398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 1
+  blendDistance: 1.5
+  weight: 0.3
+  sharedProfile: {fileID: 11400000, guid: 7d634f5d1a16f5b478a08693dd5ea176, type: 2}
 --- !u!1001 &7974071680490967501
 PrefabInstance:
   m_ObjectHideFlags: 0
