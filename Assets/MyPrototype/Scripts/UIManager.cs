@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     {
         CenterPoint.SetActive(false);
         explainText.SetActive(false);
+
         if(id==(int)PanelID.ItemGetPanel)
         {
             ItemGetPanel.SetActive(true);
@@ -59,7 +60,7 @@ public class UIManager : MonoBehaviour
     {
         CenterPoint.SetActive(true);
         explainText.SetActive(true);
-
+        
         if((PanelID)id==PanelID.ItemGetPanel)
         {
             ItemGetPanel.SetActive(false);

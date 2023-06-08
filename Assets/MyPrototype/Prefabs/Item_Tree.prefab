@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3632090571886536195}
   - component: {fileID: 3632090571886536196}
   - component: {fileID: 3632090571886536199}
-  - component: {fileID: 1099036911560508206}
+  - component: {fileID: 1616910813663781657}
   m_Layer: 0
   m_Name: Item_Tree1 (1)
   m_TagString: Untagged
@@ -315,7 +315,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &1099036911560508206
+--- !u!114 &1616910813663781657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
-  priority: 1
+  priority: 0.3
   blendDistance: 1.5
   weight: 0.3
   sharedProfile: {fileID: 11400000, guid: d752833c4fbd8da4abb04e33ab8a4b6a, type: 2}

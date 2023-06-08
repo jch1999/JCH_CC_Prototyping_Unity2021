@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 9117889184498291417}
   - component: {fileID: 9117889184498291416}
   - component: {fileID: 9117889184498291399}
-  - component: {fileID: 740090217730180645}
+  - component: {fileID: 1539349780695518017}
   m_Layer: 0
   m_Name: Item_Floor1
   m_TagString: Untagged
@@ -399,7 +399,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &740090217730180645
+--- !u!114 &1539349780695518017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
-  priority: 1
+  priority: 0.3
   blendDistance: 1.5
   weight: 0.3
   sharedProfile: {fileID: 11400000, guid: 7d634f5d1a16f5b478a08693dd5ea176, type: 2}
