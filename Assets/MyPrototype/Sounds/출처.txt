@@ -1,8 +1,14 @@
-159170__cms4f__lake-of-ohrid
+159170__cms4f__lake-of-ohrid - water sound
 from https://freesound.org/people/cms4f/sounds/159170/
 
-422048__nimlos__forest_cicada_loop
+422048__nimlos__forest_cicada_loop - forest sound
 from https://freesound.org/people/Nimlos/sounds/422048/
 
 328293__felixblume__forest-at-night-crickets-cicadas-and-insects-in-the-sian-kaan-biosphere-reserve
 from https://freesound.org/people/felix.blume/sounds/328293/
+
+505139__mitchanary__foot_grass_4 - item floor pick up sound
+from https://freesound.org/people/mitchanary/sounds/505139/
+
+421928__micahlg__chopping-wood-01 - item tree pick up sound
+from https://freesound.org/people/micahlg/sounds/421928/
